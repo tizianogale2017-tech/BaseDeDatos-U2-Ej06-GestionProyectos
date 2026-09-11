@@ -1,6 +1,6 @@
-# BaseDeDatos-U1-Ej06-GestionProyectos
+# BaseDeDatos-U2-Ej06-GestionProyectos
 
-Base de Datos - Unidad 1 - Ejercicio 6
+Base de Datos - Unidad 2 - Ejercicio 6
 
 Consigna
 
