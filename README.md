@@ -23,3 +23,27 @@ Modelar el sistema interno de una consultora de software: proyectos descompuesto
 ## Resultado
 
 ![Diagrama](captura.png)
+
+---
+
+## Normalización
+
+Se normaliza el documento `Tarea` con sus registros de `Empleado_Tarea`. En todas las tablas la PK va en la primera columna y las FK al final. Los datos son de ejemplo.
+
+**Forma 0.** Una sola tabla con todo junto. Hay celdas con listas: cada tarea puede tener varios registros de empleado tarea, y los nombres vienen completos en una sola columna.
+
+![Forma 0](normalizacion/00-forma-0.png)
+
+**1FN.** Se separan nombre y apellido. Cada elemento de la lista pasa a su propia fila y la clave queda compuesta: (`id_tarea`, `id_empleado`).
+
+![1FN](normalizacion/01-1fn.png)
+
+**2FN.** Los datos de tarea dependen solo de `id_tarea` y los de empleado solo de `id_empleado`. Se separan en `Tarea` y `Empleado`; `Empleado_Tarea` queda con la clave compuesta y lo que depende de ambos.
+
+![2FN](normalizacion/02-2fn.png)
+
+**3FN.** Los datos de `Fase`, `Proyecto` y `Perfil_Tecnico` dependen de su propio identificador y no de la PK de tarea, así que pasan a tablas aparte. En el modelo final cada tabla usa su id propio.
+
+![3FN](normalizacion/03-3fn.png)
+
+Para que se vea la lista en la Forma 0, se agregó un registro de ejemplo en `Empleado_Tarea` para el tarea 1.
